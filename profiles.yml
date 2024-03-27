@@ -1,0 +1,22 @@
+postgres-profile: ## Profile Name
+  target: erp
+  outputs:
+    dev-env:
+      type: postgres   #### Adapter Type, either postgres, snowflake, etc...
+      database: postgres
+      schema: public
+      host: localhost
+      user: postgres
+      password: root
+      port: 5432
+      threads: 4
+    
+    erp:
+      type: postgres   #### Adapter Type, either postgres, snowflake, etc...
+      database: erpdwh
+      schema: gold #! which schema should i use? bronze, silver, gold???
+      host: 10.11.33.197
+      user: erpdwh_usr
+      password: "jRc4HF_S!J"
+      port: 9999
+      threads: 4

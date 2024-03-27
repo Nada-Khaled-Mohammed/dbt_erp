@@ -1,0 +1,25 @@
+
+###########! NO matter what the file name is ###########! 
+version: 2
+
+#! type the key word 'sources' rather than the key word 'models'
+#! to make DBT understand that these are sources tables and already exist
+#! not models i am creating
+sources: ### I can have multiple sources
+   #! i can name this source whatever i want,
+   #! and this is the name that i will use whenever using the {{source()}}
+  - name: erp_source_bronze_schema
+    ##! NO NEED for these 2 keys [database & schema],
+    ##! as i have specified them in profiles.yml
+    database: erpdwh
+    schema: bronze
+    description: 'The raw tables loaded from the source DB: centralized_db2 as it is'
+    tables:
+      - name: src_res_currency
+      - name: src_res_currency_rate
+
+      - name: src_product_template
+      - name: src_product_product
+      - name: src_sale_order_line
+      - name: src_res_partner
+      - name: src_sale_order

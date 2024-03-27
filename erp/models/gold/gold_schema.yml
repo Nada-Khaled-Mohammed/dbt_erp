@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: denormalized_currency_rate_change
+    columns:
+      - name: currency_full_name
+        data_tests:
+          - unique
+          - not_null
+      - name: rate
+      - name: create_date
+
+  # - name: denormalized_sales_data
+  #   columns:
+  #     - name: order_name
+  #     - name: customer_name
+  #     - name: product_name
+  #     - name: product_barcode
+  #     - name: product_type
+  #     - name: product_sale_ok
+  #     - name: product_detailed_type
+  #     - name: product_categ_id
+  #     - name: product_uom_id
+  #     - name: product_uom_po_id
+  #     - name: product_sale_line_warn
+  #     - name: order_date
+  #     - name: order_state
+  #     - name: pricelist_id
+  #     - name: company_id
+  #     - name: product_price_unit
+  #     - name: product_customer_lead
